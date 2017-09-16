@@ -1,31 +1,3 @@
-/*const config = {
-    initial: 'normal',
-    states: {
-        normal: {
-            transitions: {
-                study: 'busy',
-            }
-        },
-        busy: {
-            transitions: {
-                get_tired: 'sleeping',
-                get_hungry: 'hungry',
-            }
-        },
-        hungry: {
-            transitions: {
-                eat: 'normal'
-            },
-        },
-        sleeping: {
-            transitions: {
-                get_hungry: 'hungry',
-                get_up: 'normal',
-            },
-        },
-    }
-};*/
-
 class FSM {
     /**
      * Creates new FSM instance.
@@ -93,7 +65,7 @@ class FSM {
      * @returns {Array}
      */
     getStates(event) {
-        return this.statesArr.filter((item, index, arr) => {
+        return this.statesArr.filter((item) => {
             if(!event) return [];
 
             return this.statesObj[item].transitions[event];
